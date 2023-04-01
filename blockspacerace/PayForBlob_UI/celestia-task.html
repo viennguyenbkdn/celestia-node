@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CELESTIA Submit PFB</title>
+    <link rel="stylesheet" type="text/css" href="./celestia-task.css" />
+    <!-- <script src="https://cdn.jsdelivr.net/npm/less"></script> -->
+  </head>
+
+  <body>
+    <div class="background"></div>
+    <div class="SubmitPfbApp">
+      <div class="header">
+        <h1>CELESTIA NODE - Submit PFB</h1>
+      </div>
+      <div class="content">
+        <div class="section">
+          <div class="title">
+            <h2>1. Introduction</h2>
+          </div>
+          <div class="description">
+            <ul>
+              <li>
+                <p>
+                  This tool can be used to submit PFB transaction or get
+                  submitted namespace shares at specified block height.
+                </p>
+              </li>
+              <li>
+                <p>
+                  For <span class="hight-light">submit PFB transaction</span>, if you don't have namespaceid or
+                  data, kindly try Celestia's tool for making custom namespaceID
+                  at <a target="_blank" href="https://go.dev/play/p/7ltvaj8lhRl">here</a>
+                </p>
+              </li>
+              <li>
+                <p>
+                  For <span class="hight-light">get Namspace shares at block height</span>, kindly fill in your
+                  namespaceid and a given block height submitted FPB.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="section option-selector-section">
+          <div class="title">
+            <h2>2. Kindly select your option</h2>
+          </div>          
+		  <div class="description">
+            <div class="form-fbp">
+              <div class="form-group option-selector">
+                <label for="optionType">
+                  Option type:
+                </label>
+                <select name="option-type">
+                  <option value="pfbTransaction">
+                    <p>PFB transaction</p>
+                  </option>
+                  <option value="namespaceShareByBlockHeight">
+                    <p>Namespace share by block height</p>
+                  </option>
+                </select>
+              </div>
+              <form id="pfbTransaction">
+                <div class="form-group">
+                  <label for="namespaceId">
+                    Namespace ID:
+                  </label>
+                  <input type="text" name="namespaceId" />
+                </div>
+                <div class="form-group">
+                  <label for="data">
+                    Data:
+                  </label>
+                  <textarea type="text" name="data" rows="7"></textarea>
+                </div>
+              </form>
+              <form id="blockHeight" style="display: none;">
+                <div class="form-group">
+                  <label for="namespaceId">
+                    Namespace ID:
+                  </label>
+                  <input type="text" name="namespaceId" />
+                </div>
+                <div class="form-group">
+                  <label for="blockHeight">
+                    Block Height:
+                  </label>
+                  <input type="text" name="blockHeight" />
+                </div>
+              </form>
+              <div class="actions">
+                <button type="button" id="submit_button">
+                  Submit
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="result">
+          <div id="response">
+          </div>
+        </div>		
+      </div>
+      <script src="./celestia-task.js"></script>
+  </body>
+</html>
